@@ -6,6 +6,8 @@
 # dotenv files
 .env
 
+notatki.md
+
 # User-specific files
 *.rsuser
 *.suo

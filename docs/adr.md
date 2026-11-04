@@ -4,4 +4,5 @@
     - decyzja - moduly: bookings, trips, users. Wpsolna baza i docker-compose
     - konsekwencje - architektura bardziej zlozona od kalsycznego monolitu
 2. Rezygnacja z MediatR
+    - W celu lepszego zrozumienia dzialania przeplywu danych w aplikacji net rezygnuje z mediatR
 3. Podzial projektu na warstwy: Domain, Infra, Application, Api oraz test. Cel - wyznaczanie granic w projektach
