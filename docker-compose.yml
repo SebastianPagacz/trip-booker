@@ -2,11 +2,12 @@ services:
   postgredb:
     image: postgres:14-alpine
     environment:
-      - PGUSER=${DB-USERNAME}
-      - PGPASSWORD=${DB-PASSWORD}
-      - PGDATABASE=${DB-NAME}
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
     volumes:
       - booker:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
 
 volumes:
   booker:
