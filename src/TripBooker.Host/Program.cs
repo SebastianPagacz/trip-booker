@@ -1,11 +1,14 @@
 var builder = WebApplication.CreateBuilder(args);
 
-string dbConnection = builder.Configuration.GetConnectionString("PostgresConnection") ?? "default";
+var dbConnection = builder.Configuration.GetConnectionString("PostgresConnection");
 
-builder.Services.AddHealthChecks().AddNpgSql(dbConnection);      
+if (!string.IsNullOrWhiteSpace(dbConnection))
+{
+    builder.Services.AddHealthChecks().AddNpgSql(dbConnection);      
 
-var app = builder.Build();
+    var app = builder.Build();
 
-app.MapHealthChecks("/health");
+    app.MapHealthChecks("/health");
 
-app.Run();
+    app.Run();
+}
